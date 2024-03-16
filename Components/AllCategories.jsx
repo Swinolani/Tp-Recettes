@@ -11,8 +11,7 @@ import {CATEGORIES} from '../data';
 
 export default function AllCategories({navigation}) {
   function goToMealsOverview(id) {
-    navigation.navigate('MealsOverview', {idParams: id}); // navigate marche pas
-    console.log('ff');
+    navigation.navigate('MealsOverview', {idParams: id}); 
   }
   return (
     <View style={styles.container}>
@@ -20,7 +19,6 @@ export default function AllCategories({navigation}) {
         <View
           key={item.id}
           style={[styles.item, {backgroundColor: item.color}]}>
-          <Pressable></Pressable>
           <Text
             style={styles.text}
             onPress={() => {
