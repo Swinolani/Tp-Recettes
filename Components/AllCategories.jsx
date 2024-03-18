@@ -11,22 +11,21 @@ import {CATEGORIES} from '../data';
 
 export default function AllCategories({navigation}) {
   function goToMealsOverview(id) {
-    navigation.navigate('MealsOverview', {idParams: id}); 
+    navigation.navigate('MealsOverview', {idParams: id});
   }
   return (
     <View style={styles.container}>
       {CATEGORIES.map((item, index) => (
-        <View
-          key={item.id}
-          style={[styles.item, {backgroundColor: item.color}]}>
-          <Text
-            style={styles.text}
-            onPress={() => {
-              goToMealsOverview(item.id);
-            }}>
-            {item.title}
-          </Text>
-        </View>
+        <Pressable
+          onPress={() => {
+            goToMealsOverview(item.id);
+          }}>
+          <View
+            key={item.id}
+            style={[styles.item, {backgroundColor: item.color}]}>
+            <Text style={styles.text}>{item.title}</Text>
+          </View>
+        </Pressable>
       ))}
     </View>
   );
