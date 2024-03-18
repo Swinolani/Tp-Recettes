@@ -10,6 +10,7 @@ import React from 'react';
 import {CATEGORIES} from '../data';
 
 export default function AllCategories({navigation}) {
+  // Navigation dans les meals overviews
   function goToMealsOverview(id) {
     navigation.navigate('MealsOverview', {idParams: id});
   }
@@ -21,7 +22,7 @@ export default function AllCategories({navigation}) {
             goToMealsOverview(item.id);
           }}>
           <View
-            key={item.id}
+            key={item.id.toString()}
             style={[styles.item, {backgroundColor: item.color}]}>
             <Text style={styles.text}>{item.title}</Text>
           </View>
